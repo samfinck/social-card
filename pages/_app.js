@@ -12,12 +12,6 @@ class MyApp extends Component {
       description:'asdasd',
       profilePic:''
     }
-      username:'john',
-      handle:'johnx',
-      image:'',
-      description:'asdasd',
-      profilePic:''
-    }
     {
       username:'john',
       handle:'johnx',
@@ -30,6 +24,13 @@ class MyApp extends Component {
       handle:'johnx',
       image:'',
       description:'asdasd',
+      profilePic:''
+    }
+    {
+      username:'',
+      handle:'',
+      image:'',
+      description:'',
       profilePic:''
     }]
   }
