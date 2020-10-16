@@ -64,6 +64,7 @@ p.description-text {
 .button-container {
     display: flex;
     justify-content: space-evenly;
+    size: ;
     
 }
 img {

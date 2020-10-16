@@ -1,9 +1,14 @@
+import LikeButton from "./like-button"
+
 function ButtonContainer(){
     return(
         <div className='button-container'>
-            <button className='like-button'/>
-            <button className='comment-button'/>
-            <button className='share-button'/>
+            <LikeButton/>
+            <button className='comment-button' type='button'>Comment</button>
+            <button className='share-button' type='button'>
+                Share
+            <img src=''/>
+            </button>
         </div>
     )
 }
