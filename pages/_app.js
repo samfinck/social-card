@@ -2,6 +2,9 @@ import './_app.styles.css';
 import Card from './card';
 import React, { Component } from 'react';
 
+// delete this - just a material ui example
+import Button from '@material-ui/core/Button'
+
 class MyApp extends Component {
   constructor(props){
     super(props)
@@ -39,36 +42,39 @@ class MyApp extends Component {
   
   render(){
     return (
-      <div className='body-container'>
-        <Card 
-        username='samfinckh' 
-        handle='samfinckh2'
-        image='https://www.stateofdigitalpublishing.com/wp-content/uploads/2018/10/content.jpg'
-        description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-        profilePic='https://tse4.mm.bing.net/th?id=OIP.OesLvyzDO6AvU_hYUAT4IAHaHa&pid=Api'
-        />
-        <Card 
-        username='stanfrink' 
-        handle='stanfrink2'
-        image='https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Content-is-like-water-1980.jpg/1200px-Content-is-like-water-1980.jpg'
-        description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-        profilePic='https://support.plymouth.edu/kb_images/Yammer/default.jpeg'
-        />
-        <Card 
-        username='clamdrink' 
-        handle='clamdrink2'
-        image='https://www.doz.com/cms/wp-content/uploads/2013/08/Content-is-king.png'
-        description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-        profilePic='https://tse4.mm.bing.net/th?id=OIP.LC6JuWgA_1GxGH-nQJ1b0wHaHa&pid=Api'
-        />
-        <Card 
-        username='jampink' 
-        handle='jampink2'
-        image='x'
-        description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-        profilePic='http://4.bp.blogspot.com/-zsbDeAUd8aY/US7F0ta5d9I/AAAAAAAAEKY/UL2AAhHj6J8/s1600/facebook-default-no-profile-pic.jpg'
-        />
-      </div>  
+      <>
+        <Button color="primary">Example Material UI Button</Button>
+        <div className='body-container'>
+          <Card 
+          username='samfinckh' 
+          handle='samfinckh2'
+          image='https://www.stateofdigitalpublishing.com/wp-content/uploads/2018/10/content.jpg'
+          description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+          profilePic='https://tse4.mm.bing.net/th?id=OIP.OesLvyzDO6AvU_hYUAT4IAHaHa&pid=Api'
+          />
+          <Card 
+          username='stanfrink' 
+          handle='stanfrink2'
+          image='https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Content-is-like-water-1980.jpg/1200px-Content-is-like-water-1980.jpg'
+          description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+          profilePic='https://support.plymouth.edu/kb_images/Yammer/default.jpeg'
+          />
+          <Card 
+          username='clamdrink' 
+          handle='clamdrink2'
+          image='https://www.doz.com/cms/wp-content/uploads/2013/08/Content-is-king.png'
+          description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+          profilePic='https://tse4.mm.bing.net/th?id=OIP.LC6JuWgA_1GxGH-nQJ1b0wHaHa&pid=Api'
+          />
+          <Card 
+          username='jampink' 
+          handle='jampink2'
+          image='x'
+          description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+          profilePic='http://4.bp.blogspot.com/-zsbDeAUd8aY/US7F0ta5d9I/AAAAAAAAEKY/UL2AAhHj6J8/s1600/facebook-default-no-profile-pic.jpg'
+          />
+        </div>
+      </>
     );
   }  
   }
