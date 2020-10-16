@@ -5,35 +5,37 @@ import React, { Component } from 'react';
 class MyApp extends Component {
   constructor(props){
     super(props)
-    this.state = {[{
-      username:'john',
-      handle:'johnx',
-      image:'',
-      description:'asdasd',
-      profilePic:''
-    }
-    {
-      username:'john',
-      handle:'johnx',
-      image:'',
-      description:'asdasd',
-      profilePic:''
-    }
-    {
-      username:'john',
-      handle:'johnx',
-      image:'',
-      description:'asdasd',
-      profilePic:''
-    }
-    {
-      username:'',
-      handle:'',
-      image:'',
-      description:'',
-      profilePic:''
-    }]
-  }
+    this.state = {
+      users: [{
+        username:'john',
+        handle:'johnx',
+        image:'',
+        description:'asdasd',
+        profilePic:''
+      },
+      {
+        username:'john',
+        handle:'johnx',
+        image:'',
+        description:'asdasd',
+        profilePic:''
+      },
+      {
+        username:'john',
+        handle:'johnx',
+        image:'',
+        description:'asdasd',
+        profilePic:''
+      },
+      {
+        username:'',
+        handle:'',
+        image:'',
+        description:'',
+        profilePic:''
+      }]
+  };
+}
   
   render(){
     return (
