@@ -6,12 +6,12 @@ import AlarmIcon from '@material-ui/icons/Alarm';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 
-function LikeButton(){
+function CommentButton(){
   return(
-    <div className='like-button'>
-      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Facebook_Like_button.svg/1024px-Facebook_Like_button.svg.png'/>
+    <div className='comment-button'>
+      <img src='https://simg.nicepng.com/png/small/119-1196219_ic-comment-comments-comments-icon-transparent.png'/>
     </div>
   )
 }
 
-export default LikeButton
+export default CommentButton

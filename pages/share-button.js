@@ -6,12 +6,12 @@ import AlarmIcon from '@material-ui/icons/Alarm';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 
-function LikeButton(){
+function ShareButton(){
   return(
-    <div className='like-button'>
-      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Facebook_Like_button.svg/1024px-Facebook_Like_button.svg.png'/>
+    <div>
+      <img src='https://www.lifewire.com/thmb/M_CZJu9RNOU9r33qPnB36Q06yHo=/768x0/filters:no_upscale%28%29:max_bytes%28150000%29:strip_icc%28%29/share_button2-57f7d54e3df78c690f643260.png'/>
     </div>
   )
 }
 
-export default LikeButton
+export default ShareButton
