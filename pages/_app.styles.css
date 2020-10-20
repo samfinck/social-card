@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-  }
+
 
 body {
     width: 100%;
@@ -49,8 +47,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: end;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 340px;
+    max-width: 340px;
 }
 
 .image-container {
