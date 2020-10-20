@@ -1,7 +1,8 @@
+import { TextField } from "@material-ui/core"
 import ButtonContainer from "./button-container"
 import TopContainer from "./top-container"
 
-function Card({username, handle, image, description, profilePic}) {
+function Card({username, handle, image, description, profilePic, date}) {
   return(
       <div className="card-container"> 
         <div className="top-container">
@@ -10,11 +11,14 @@ function Card({username, handle, image, description, profilePic}) {
             </div>
             <div className="userhan-container">
                 <div className="username-container">
-                {username}
+                    {username}
                 </div>
                 <div className="handle-container">
-                @{handle}
+                    @{handle}
                 </div>
+            </div>
+            <div className="date-container">
+                {date}
             </div>
         </div>
         <div className="body-container">
@@ -25,7 +29,14 @@ function Card({username, handle, image, description, profilePic}) {
               <p className="description-text">{description}</p>
             </div>
         </div>
+        <br/>
         <ButtonContainer/>
+        <br/>
+        <TextField
+            variant='filled'
+            color='secondary'
+            placeholder='Start commenting here'
+        />
       </div>  
     )
 }

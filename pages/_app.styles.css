@@ -5,8 +5,8 @@
 body {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    
 }
   
 
@@ -18,6 +18,8 @@ body {
     margin: 10px;
     display: flex;
     flex-flow: column;
+    min-width: 300px;
+    max-width: 300px;
 }
 
 .top-container{
@@ -44,7 +46,6 @@ body {
 .body-container {
     display: flex;
     flex-flow: column;
-    border: 1px solid black;
 }
 
 .image-container {
@@ -62,8 +63,11 @@ p.description-text {
 }
 
 .button-container {
+    max-height: 50px;
+    max-width: auto;
     display: flex;
-    padding: 0px;   
+    justify-content: center;
+    
 }
 
 img {
@@ -71,12 +75,32 @@ img {
     max-height: 100%;    
 }
 
-.like-button {
-    max-width: 50%;
-    max-height: 50%;
+.like-button{
+    display: flex;
+    justify-content: center;
 }
 
-.comment-button {
-    max-width: 50%;
-    max-height: 50%;
+.comment-button{
+
 }
+
+.share-button{
+
+}
+
+.like-image {
+    
+}
+
+.comment-image {
+    max-width: auto;
+    max-height: 30px;
+    display: flex;
+}
+
+.share-image {
+    max-width: auto;
+    max-height: 30px;
+    display: flex;
+}
+

@@ -1,30 +1,30 @@
-import LikeButton from "./like-button"
+import LikeButtonImg from "./like-button"
 import Button from '@material-ui/core/Button'
-import CommentButton from "./comment-button"
-import ShareButton from "./share-button"
+import CommentButtonImg from "./comment-button"
+import ShareButtonImg from "./share-button"
 import Icon from '@material-ui/core/Icon';
+import ButtonGroup from '@material-ui/core/ButtonGroup'
 
 function ButtonContainer(){
     return(
         <div className='button-container'>
-            <Button
-            startIcon={<LikeButton />} 
-            size='small' 
-            onClick={()=>alert('liked')}
-            color='secondary'
+        <ButtonGroup>
+            <Button 
+                className='like-button'
+                endIcon={<LikeButtonImg/>}  
+                onClick={()=>alert('liked')}
+                color='primary'
             />
             <Button
-            startIcon={<CommentButton />}
-            onClick={()=>
-                prompt('My comment:', 'enter comment')
-                
-            }
+                color='primary'
+                endIcon={<CommentButtonImg/>}
+                onClick={()=>prompt('My comment:', 'enter comment')}
+                variant='disabled'
             />
             <Button
-                variant="contained"
-                color="primary"
-                endIcon={<Icon>Share</Icon>}
+                endIcon={<ShareButtonImg/>}
             />
+        </ButtonGroup>
         </div>
     )
 }
