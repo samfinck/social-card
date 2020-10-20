@@ -1,29 +1,38 @@
+img {
+    max-width: 100%;
+    max-height: 100%;    
+}
 
-
-body {
+.social-list-container{
     width: 100%;
     display: flex;
     justify-content: center;
-    
 }
-  
+
+.card-list-container {
+    display: flex;
+    flex-direction: column;
+}
 
 .card-container {
-    padding: 10px;
     border: 2px solid lightblue;
-    margin-bottom: 10px;
-    display: flex;
-    flex-flow: column;
-    min-width: 400px;
-    max-width: 400px;
-}
-
-.top-container{
-    display: flex;
+    margin: 10px;
+    width: 400px;
+    height: 450px;
+    display: grid;
+    grid-template-columns: repeat(8, 1 fr);
+    grid-gap: 10px;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+        "a b b b b b c c"
+        "d e e e e e e e"
+        "d e e e e e e e"
+        "d f f f f f f f";
 }
 
 .profile-container{
     margin-right: 10px;
+    grid-area: a;
 }
 
 .profile-pic{
@@ -31,24 +40,36 @@ body {
 }
 
 .userhan-container{
-    display: flex;
-    flex-direction: column;
+    grid-area: b;
+}
+
+.username-container{
+
+}
+
+.handle-container {
+
 }
 
 .date-container{
     margin: 10pxs;
 }
 
-.username-container{
-    
+.accordion-container{
+    grid-area: c;
+}
+
+.blank-div-container {
+    grid-area: d;
 }
 
 .body-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    min-width: 340px;
-    max-width: 340px;
+    grid-area: e;
+    display: grid;
+}
+
+.image-description-container{
+
 }
 
 .image-container {
@@ -65,6 +86,14 @@ p.description-text {
     font-size: 8px;
 }
 
+.response-container {
+    grid-area: f;
+}
+
+.comment-field-container{
+
+}
+``
 .button-container {
     max-height: 50px;
     max-width: auto;
@@ -73,37 +102,4 @@ p.description-text {
     
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;    
-}
-
-.like-button{
-    display: flex;
-    justify-content: center;
-}
-
-.comment-button{
-
-}
-
-.share-button{
-
-}
-
-.like-image {
-    
-}
-
-.comment-image {
-    max-width: auto;
-    max-height: 30px;
-    display: flex;
-}
-
-.share-image {
-    max-width: auto;
-    max-height: 30px;
-    display: flex;
-}
 

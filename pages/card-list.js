@@ -1,9 +1,10 @@
 import React from 'react'
 import Card from './card';
+import Container from '@material-ui/core/Container'
 
 function CardList() {
     return(
-        <div className='body-container'>
+        <div className='card-list-container'>
             <Card
                 key='123' 
                 username='samfinckh' 

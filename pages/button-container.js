@@ -33,23 +33,23 @@ function ButtonStyled() {
 function ButtonContainer(){
     return(
         <ThemeProvider theme={theme}>
-        <div className='button-container'>
-        <ButtonStyled/>
-        <ButtonGroup>
-            <Button 
-                className='like-button' 
-                onClick={()=>alert('liked')}
-                color='primary'
-            />
-            <Button
-                color='primary'
-                onClick={()=>prompt('My comment:', 'enter comment')}
-            />
-            <Button
-                color='primary'
-            />
-        </ButtonGroup>
-        </div>
+            <div className='button-container'>
+                <ButtonStyled/>
+                <ButtonGroup>
+                    <Button 
+                        className='like-button' 
+                        onClick={()=>alert('liked')}
+                        color='primary'
+                    />
+                    <Button
+                        color='primary'
+                        onClick={()=>prompt('My comment:', 'enter comment')}
+                    />
+                    <Button
+                        color='primary'
+                    />
+                </ButtonGroup>
+            </div>
         </ThemeProvider>
     )
 }
