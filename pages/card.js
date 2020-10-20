@@ -1,6 +1,8 @@
 import { TextField } from "@material-ui/core"
 import ButtonContainer from "./button-container"
 import TopContainer from "./top-container"
+import 'fontsource-roboto';
+import Typography from '@material-ui/core/Typography'
 
 function Card({username, handle, image, description, profilePic, date}) {
   return(
@@ -10,23 +12,24 @@ function Card({username, handle, image, description, profilePic, date}) {
                 <img className='profile-pic' src={profilePic} width="50px" height="50px"/>
             </div>
             <div className="userhan-container">
-                <div className="username-container">
+                <Typography className="username-container" variant='body1'>
                     {username}
-                </div>
-                <div className="handle-container">
+                </Typography>
+                <Typography className="handle-container" variant='subtitle3'>
                     @{handle}
-                </div>
+                </Typography>
             </div>
-            <div className="date-container">
+            <Typography className="date-container">
                 {date}
-            </div>
+            </Typography>
         </div>
         <div className="body-container">
+            <span></span>
             <div className="image-container">
               <img src={image}/>
             </div>
             <div className="description-container">
-              <p className="description-text">{description}</p>
+              <Typography className="description-text" variant='body2'>{description}</Typography>
             </div>
         </div>
         <br/>
