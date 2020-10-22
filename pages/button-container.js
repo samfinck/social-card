@@ -55,7 +55,7 @@ function ButtonContainer({likes, comments, shares}){
                 </div>
                 <div>
                 <ButtonStyled
-                    onClick={()=>{alert('direct page to comments')}}
+                    onClick={()=>{alert('direct selected element to comments')}}
                     response='comment'
                 />
                 {comments}
@@ -64,7 +64,7 @@ function ButtonContainer({likes, comments, shares}){
                 <ButtonStyled
                     color='primary'
                     response='share'
-                    onClick={()=>{alert('shared!')}}
+                    onClick={()=>{alert('pop out list of share options')}}
                 />
                 {shares}
                 </div>
