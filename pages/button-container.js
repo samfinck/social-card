@@ -9,6 +9,8 @@ import { orange } from '@material-ui/core/colors'
 import Typography from '@material-ui/core/Typography'
 import { blue } from '@material-ui/core/colors'
 
+import { useState } from 'react'
+
 const useStyles = makeStyles({
     root: {
         background:'rgb(93, 208, 243)',
@@ -30,10 +32,6 @@ const theme = createMuiTheme({
     }
 })
 
-function LikeButtonClick(event){
-        event.target.style.backgroundColor = 'blue';
-}
-
 
 
 function ButtonStyled({response, onClick}) {
@@ -41,16 +39,26 @@ function ButtonStyled({response, onClick}) {
     return <Button className={classes.root} onClick={onClick}>{response}</Button>
 }
 
-function ButtonContainer({likes, comments, shares}){
+const ButtonContainer = ({ likes, comments, shares, onLiked, onUnliked }) => {
+    const [liked, setLiked] = useState(false);
+
+    const likeButtonClick = (event) => {
+        // event.target.style.backgroundColor = 'blue';
+        if (onLiked && !liked) {
+            onLiked();
+            setLiked(prev => !prev);
+        }
+        if (onUnliked && liked) {
+            onUnliked();
+            setLiked(prev => !prev);
+        }
+    } 
+
     return(
         <ThemeProvider theme={theme}>
             <div className='button-container'>
                 <div>   
-                <ButtonStyled  
-                    className='like-button' 
-                    onClick={LikeButtonClick}
-                    response='like'
-                />
+                <ButtonStyled className="like-button" onClick={likeButtonClick} response={liked ? 'Unlike' : 'Like'} />
                 {likes}
                 </div>
                 <div>

@@ -8,8 +8,19 @@ import SimpleAccordion from "./accordion-component";
 import Container from "@material-ui/core/Container"
 import CommentList from "./comment-list";
 
+import { useState } from 'react';
 
 function Card({username, handle, image, description, profilePic, date, likes, comments, shares, commenter1, comment1}) {
+    const [numlikes, setNumlikes] = useState(likes);
+
+    const liked = () => {
+        setNumlikes(prev => prev + 1);
+    }
+
+    const unliked = () => {
+        setNumlikes(prev => prev - 1);
+    }
+
   return(
       <div className="card-container"> 
         <div className="profile-container">
@@ -40,9 +51,11 @@ function Card({username, handle, image, description, profilePic, date, likes, co
         </div>
         <div className="response-container">
             <ButtonContainer
-            likes={likes}
-            comments={comments}
-            shares={shares}
+                likes={numlikes}
+                comments={comments}
+                shares={shares}
+                onLiked={liked}
+                onUnliked={unliked}
             />
             <div>
                 <h4 className='comments-title'>Comments</h4>
