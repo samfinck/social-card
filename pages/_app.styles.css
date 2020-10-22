@@ -16,27 +16,37 @@ img {
 
 .card-container {
     border: 2px solid lightblue;
+    padding: 10px;
     margin: 10px;
-    width: 400px;
-    height: 450px;
+    width: 500px;
+    height: 600px;
     display: grid;
-    grid-template-columns: repeat(8, 1 fr);
+    grid-template-columns: repeat(9, 1 fr);
     grid-gap: 10px;
     grid-auto-rows: auto;
     grid-template-areas: 
-        "a b b b b b c c"
-        "d e e e e e e e"
-        "d e e e e e e e"
-        "d f f f f f f f";
+        "a b b b b b b c c"
+        "d e e e e e e e e"
+        "d e e e e e e e e"
+        "d f f f f f f f f";
 }
 
 .profile-container{
     margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
     grid-area: a;
 }
 
 .profile-pic{
     border-radius: 50%;
+}
+
+img.profile-pic{
+    width: 50px;
+    height: 50px;
+    max-width: 100%;
+    max-height: 100%;  
 }
 
 .userhan-container{
@@ -61,6 +71,7 @@ img {
 
 .blank-div-container {
     grid-area: d;
+    width: 50px;
 }
 
 .body-container {
@@ -69,37 +80,68 @@ img {
 }
 
 .image-description-container{
+    
 
 }
 
-.image-container {
-    display: flex;
-    justify-content: center;
+.image-in-body {
+    border-radius: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img.image-container{
+    max-width: 100%;
+    max-height: 100%; 
 }
 
 .description-container {
-    border: 2px solid rgb(206, 233, 241);
+    border-bottom: 2px dashed rgb(206, 233, 241);
     display: flex;
     align-content: center;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
 }
 p.description-text {
-    font-size: 8px;
+    font-size: 10px;
 }
 
 .response-container {
     grid-area: f;
 }
 
-.comment-field-container{
-
+.comments-title {
+    padding: 0px;
+    margin: 5px;
 }
-``
-.button-container {
-    max-height: 50px;
-    max-width: auto;
+
+.comment-list{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+}
+
+.commenter-name{
+    padding: 0px;
+    margin: 5px;
+}
+
+.comment-div{
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    padding:2px;
+    margin: 8px;
     
 }
 
+.comment-field-container{
 
+}
+
+.button-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    
+}

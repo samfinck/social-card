@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     border: 'solid white',
+    padding: '0px',
+    margin: '0px',
+
     
   },
   heading: {

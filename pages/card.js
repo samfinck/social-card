@@ -6,9 +6,10 @@ import Typography from '@material-ui/core/Typography'
 import Accordion from '@material-ui/core/Accordion';
 import SimpleAccordion from "./accordion-component";
 import Container from "@material-ui/core/Container"
+import CommentList from "./comment-list";
 
 
-function Card({username, handle, image, description, profilePic, date}) {
+function Card({username, handle, image, description, profilePic, date, likes, comments, shares, commenter1, comment1}) {
   return(
       <div className="card-container"> 
         <div className="profile-container">
@@ -28,22 +29,36 @@ function Card({username, handle, image, description, profilePic, date}) {
         <div className="accordion-container">
             <SimpleAccordion></SimpleAccordion>
         </div>
-        <div className="blank-div-container">BLANK</div>
+        <div className="blank-div-container"></div>
         <div className="body-container">
-            <div className="image-container">
-                <img src={image}/>
+            <div>
+                <img className="image-in-body" src={image}/>
             </div>
             <div className="description-container">
                 <Typography className="description-text" variant='body2'>{description}</Typography>
             </div>
         </div>
         <div className="response-container">
-            <ButtonContainer/>
+            <ButtonContainer
+            likes={likes}
+            comments={comments}
+            shares={shares}
+            />
+            <div>
+                <h4 className='comments-title'>Comments</h4>
+                <CommentList
+                commenter1={commenter1}
+                comment1={comment1}
+                />
+            </div>
             <div className="comment-field-container">
                 <TextField
-                    variant='filled'
+                    variant='outlined'
                     color='secondary'
                     placeholder='Start commenting here'
+                    fullWidth='true'
+                    margin='dense'
+                    size='small'
                 />
             </div>
         </div>
