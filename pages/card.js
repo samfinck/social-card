@@ -35,9 +35,11 @@ function Card({username, handle, image, description, profilePic, date, likes, co
 
     const commentCommitted = () => {
         const commentcontent = document.getElementById('commentField').value;
-        console.log(commentcontent);
-        document.getElementById('commentField').value = '';
-        commented();
+        if (document.getElementById('commentField').value !== ''){
+            console.log(commentcontent);
+            document.getElementById('commentField').value = '';
+            commented();
+        } 
     }
 
   return(
