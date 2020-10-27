@@ -21,6 +21,25 @@ function Card({username, handle, image, description, profilePic, date, likes, co
         setNumlikes(prev => prev - 1);
     }
 
+    const[numcomments, setNumcomments] = useState(comments);
+
+    const commented = () => {
+        setNumcomments(prev => prev + 1);
+    }
+
+    function doit_onkeypress(event){
+        if (event.keyCode == 13 || event.which == 13){
+            commentCommitted();
+        }
+    }
+
+    const commentCommitted = () => {
+        const commentcontent = document.getElementById('commentField').value;
+        console.log(commentcontent);
+        document.getElementById('commentField').value = '';
+        commented();
+    }
+
   return(
       <div className="card-container"> 
         <div className="profile-container">
@@ -52,10 +71,11 @@ function Card({username, handle, image, description, profilePic, date, likes, co
         <div className="response-container">
             <ButtonContainer
                 likes={numlikes}
-                comments={comments}
+                comments={numcomments}
                 shares={shares}
                 onLiked={liked}
                 onUnliked={unliked}
+                onCommented={commented}
             />
             <div>
                 <h4 className='comments-title'>Comments</h4>
@@ -72,6 +92,8 @@ function Card({username, handle, image, description, profilePic, date, likes, co
                     fullWidth='true'
                     margin='dense'
                     size='small'
+                    id='commentField'
+                    onKeyPress={doit_onkeypress}
                 />
             </div>
         </div>
