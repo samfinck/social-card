@@ -19,7 +19,6 @@ img {
     padding: 10px;
     margin: 10px;
     width: 500px;
-    height: 600px;
     display: grid;
     grid-template-columns: repeat(9, 1 fr);
     grid-gap: 10px;
@@ -67,6 +66,8 @@ img.profile-pic{
 
 .accordion-container{
     grid-area: c;
+    right: 0;
+    position: absolute;
 }
 
 .blank-div-container {
