@@ -10,7 +10,7 @@ import CommentList from "./comment-list";
 
 import { useRef, useState } from 'react';
 
-function Card({ username, handle, image, description, profilePic, date, likes, comments, shares, commenter1, comment1, commenter2, comment2 }) {
+function Card({ username, handle, image, description, profilePic, date, likes, comments = [], shares }) {
     const [numlikes, setNumlikes] = useState(likes);
     const textInput = useRef(null);
 
@@ -22,7 +22,7 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
         setNumlikes(prev => prev - 1);
     }
 
-    const[numcomments, setNumcomments] = useState(comments);
+    const[numcomments, setNumcomments] = useState(comments.length);
 
     const commented = () => {
         setNumcomments(prev => prev + 1);
@@ -44,9 +44,9 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
     }
 
     const commentButtonClicked = () => {
-        if (textInput && textInput.current) {
+        // if (textInput && textInput.current) {
             textInput.current.focus();
-        }
+        // }
     }
 
   return(
@@ -89,12 +89,16 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
             />
             <div>
                 <h4 className='comments-title'>Comments</h4>
-                <CommentList
-                commenter1={commenter1}
-                comment1={comment1}
-                commenter2={commenter2}
-                comment2={comment2}
-                />
+                <ol>
+                    {comments.map(comment => {
+                        return (
+                            <li>
+                                <h4>{comment.commenter}</h4>
+                                <p>{comment.comment}</p>
+                            </li>
+                        )
+                    })}
+                </ol>
             </div>
             <div className="comment-field-container">
                 <TextField

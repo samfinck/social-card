@@ -2,15 +2,44 @@ import React from 'react'
 import Card from './card';
 import Container from '@material-ui/core/Container'
 
+const comments = [
+    {
+        commenter: 'Sean',
+        comment: 'This is a comment'
+    },
+    {
+        commenter: 'Shorn',
+        comment: 'this is another comment'
+    }
+];
 
+const moreComments = [
+    {
+        commenter: 'John',
+        comment: 'This is a john comment'
+    }
+];
+
+const evenMoreComments = [
+    {
+        commenter: 'John',
+        comment: 'This is a john comment'
+    },
+    {
+        commenter: 'Sean',
+        comment: 'This is a comment'
+    },
+    {
+        commenter: 'Sean',
+        comment: 'This is a comment'
+    },
+    {
+        commenter: 'Sean',
+        comment: 'This is a comment'
+    },
+];
 
 function CardList() {
-    const acommentnameandcontent = {
-        commenter1: "John Adams",
-        comment1: "neato sam!",
-        commenter2: "Phillip Hamilton",
-        comment2: "great post dude",
-    };
 
     return(
         <div className='card-list-container'>
@@ -22,13 +51,9 @@ function CardList() {
                 description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
                 profilePic='https://tse4.mm.bing.net/th?id=OIP.OesLvyzDO6AvU_hYUAT4IAHaHa&pid=Api'
                 likes={120}
-                comments={100}
+                comments={comments}
                 shares={2}
                 date='20 Oct'
-                commenter1={acommentnameandcontent.commenter1}
-                comment1={acommentnameandcontent.comment1}
-                commenter2={acommentnameandcontent.commenter2}
-                comment2={acommentnameandcontent.comment2}
             />
             <Card 
                 username='stanfrink' 
@@ -38,7 +63,7 @@ function CardList() {
                 profilePic='https://support.plymouth.edu/kb_images/Yammer/default.jpeg'
                 date='20 Oct'
                 likes={99}
-                comments={1}
+                comments={moreComments}
                 shares={5}
             />
             <Card 
@@ -49,7 +74,7 @@ function CardList() {
                 profilePic='https://tse4.mm.bing.net/th?id=OIP.LC6JuWgA_1GxGH-nQJ1b0wHaHa&pid=Api'
                 date='19 Oct'
                 likes={939}
-                comments={400}
+                comments={evenMoreComments}
                 shares={112}
             />
             <Card 
@@ -60,7 +85,7 @@ function CardList() {
                 profilePic='http://4.bp.blogspot.com/-zsbDeAUd8aY/US7F0ta5d9I/AAAAAAAAEKY/UL2AAhHj6J8/s1600/facebook-default-no-profile-pic.jpg'
                 date='18 Oct'
                 likes={2}
-                comments={10}
+                comments={comments}
                 shares={2}
             />
         </div>
