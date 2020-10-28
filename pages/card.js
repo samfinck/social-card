@@ -64,9 +64,11 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
                 <Typography className="date-container">
                 {date}
             </Typography>
-        </div>  
-        <div className="accordion-container">
-            <SimpleAccordion></SimpleAccordion>
+        </div>
+        <div style={{ position: 'absolute', width: '500px' }}>
+            <div className="accordion-container">
+                <SimpleAccordion></SimpleAccordion>
+            </div>
         </div>
         <div className="blank-div-container"></div>
         <div className="body-container">
