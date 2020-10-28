@@ -39,7 +39,7 @@ function ButtonStyled({response, onClick}) {
     return <Button className={classes.root} onClick={onClick}>{response}</Button>
 }
 
-const ButtonContainer = ({ likes, comments, shares, onLiked, onUnliked, textInput }) => {
+const ButtonContainer = ({ likes, comments, shares, onLiked, onUnliked, textInput, onCommentButtonClicked }) => {
     
     
     const [liked, setLiked] = useState(false);
@@ -57,7 +57,10 @@ const ButtonContainer = ({ likes, comments, shares, onLiked, onUnliked, textInpu
     }
 
     function handleButtonClick() {
-        textInput.current.focus();
+        // textInput.current.focus();
+        if (onCommentButtonClicked) {
+            onCommentButtonClicked();
+        }
     }
 
 

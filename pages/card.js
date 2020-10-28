@@ -8,11 +8,11 @@ import SimpleAccordion from "./accordion-component";
 import Container from "@material-ui/core/Container"
 import CommentList from "./comment-list";
 
-import { useState } from 'react';
-import { useRef } from 'react'
+import { useRef, useState } from 'react';
 
 function Card({ username, handle, image, description, profilePic, date, likes, comments, shares, commenter1, comment1, commenter2, comment2 }) {
     const [numlikes, setNumlikes] = useState(likes);
+    const textInput = useRef(null);
 
     const liked = () => {
         setNumlikes(prev => prev + 1);
@@ -43,9 +43,11 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
         } 
     }
 
-    const textInput = useRef(null);
-
-    
+    const commentButtonClicked = () => {
+        if (textInput && textInput.current) {
+            textInput.current.focus();
+        }
+    }
 
   return(
       <div className="card-container"> 
@@ -83,6 +85,7 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
                 onLiked={liked}
                 onUnliked={unliked}
                 onCommented={commented}
+                onCommentButtonClicked={commentButtonClicked}
             />
             <div>
                 <h4 className='comments-title'>Comments</h4>
@@ -102,8 +105,7 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
                     margin='dense'
                     size='small'
                     onKeyPress={doit_onkeypress}
-                    ref={textInput}
-                    
+                    inputRef={textInput}
                 />
             </div>
         </div>
