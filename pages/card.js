@@ -9,8 +9,9 @@ import Container from "@material-ui/core/Container"
 import CommentList from "./comment-list";
 
 import { useState } from 'react';
+import { useRef } from 'react'
 
-function Card({username, handle, image, description, profilePic, date, likes, comments, shares, commenter1, comment1}) {
+function Card({ username, handle, image, description, profilePic, date, likes, comments, shares, commenter1, comment1, commenter2, comment2 }) {
     const [numlikes, setNumlikes] = useState(likes);
 
     const liked = () => {
@@ -41,6 +42,10 @@ function Card({username, handle, image, description, profilePic, date, likes, co
             commented();
         } 
     }
+
+    const textInput = useRef(null);
+
+    
 
   return(
       <div className="card-container"> 
@@ -84,6 +89,8 @@ function Card({username, handle, image, description, profilePic, date, likes, co
                 <CommentList
                 commenter1={commenter1}
                 comment1={comment1}
+                commenter2={commenter2}
+                comment2={comment2}
                 />
             </div>
             <div className="comment-field-container">
@@ -94,8 +101,9 @@ function Card({username, handle, image, description, profilePic, date, likes, co
                     fullWidth='true'
                     margin='dense'
                     size='small'
-                    id='commentField'
                     onKeyPress={doit_onkeypress}
+                    ref={textInput}
+                    
                 />
             </div>
         </div>

@@ -39,7 +39,9 @@ function ButtonStyled({response, onClick}) {
     return <Button className={classes.root} onClick={onClick}>{response}</Button>
 }
 
-const ButtonContainer = ({ likes, comments, shares, onLiked, onUnliked, onCommented }) => {
+const ButtonContainer = ({ likes, comments, shares, onLiked, onUnliked, textInput }) => {
+    
+    
     const [liked, setLiked] = useState(false);
 
     const likeButtonClick = (event) => {
@@ -54,13 +56,12 @@ const ButtonContainer = ({ likes, comments, shares, onLiked, onUnliked, onCommen
         }
     }
 
+    function handleButtonClick() {
+        textInput.current.focus();
+    }
 
-    const commentButtonClick = (event) => {
-            document.getElementById("commentField").focus();
-        }
 
     return(
-        <ThemeProvider theme={theme}>
             <div className='button-container'>
                 <div>   
                 <ButtonStyled className="like-button" onClick={likeButtonClick} response={liked ? 'Unlike' : 'Like'} />
@@ -68,7 +69,7 @@ const ButtonContainer = ({ likes, comments, shares, onLiked, onUnliked, onCommen
                 </div>
                 <div>
                 <ButtonStyled
-                    onClick={commentButtonClick}
+                    onClick={handleButtonClick}
                     response='comment'
                 />
                 {comments}
@@ -82,7 +83,6 @@ const ButtonContainer = ({ likes, comments, shares, onLiked, onUnliked, onCommen
                 {shares}
                 </div>
             </div>
-        </ThemeProvider>
     )
 }
 

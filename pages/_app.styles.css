@@ -118,12 +118,18 @@ p.description-text {
 
 .comment-list{
     display: flex;
+    flex-direction: column;
+}
+
+.individual-comment{
+    display: flex;
     flex-direction: row;
 }
 
 .commenter-name{
     padding: 0px;
     margin: 5px;
+    width:100px;
 }
 
 .comment-div{

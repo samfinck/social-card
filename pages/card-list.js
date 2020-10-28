@@ -2,7 +2,16 @@ import React from 'react'
 import Card from './card';
 import Container from '@material-ui/core/Container'
 
+
+
 function CardList() {
+    const acommentnameandcontent = {
+        commenter1: "John Adams",
+        comment1: "neato sam!",
+        commenter2: "Phillip Hamilton",
+        comment2: "great post dude",
+    };
+
     return(
         <div className='card-list-container'>
             <Card
@@ -16,8 +25,10 @@ function CardList() {
                 comments={100}
                 shares={2}
                 date='20 Oct'
-                commenter1='Johnny Johnson'
-                comment1='Great post!'
+                commenter1={acommentnameandcontent.commenter1}
+                comment1={acommentnameandcontent.comment1}
+                commenter2={acommentnameandcontent.commenter2}
+                comment2={acommentnameandcontent.comment2}
             />
             <Card 
                 username='stanfrink' 
