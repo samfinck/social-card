@@ -149,3 +149,7 @@ p.description-text {
     justify-content: space-evenly;
     
 }
+
+.MuiPaper-elevation1 {
+    box-shadow: white;
+}

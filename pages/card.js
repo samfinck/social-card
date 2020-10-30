@@ -75,7 +75,7 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
         </div>
         <div style={{ position: 'absolute', width: '500px' }}>
             <div className="accordion-container">
-                <SimpleAccordion></SimpleAccordion>
+                <SimpleAccordion/>
             </div>
         </div>
         <div className="blank-div-container"></div>
