@@ -6,12 +6,13 @@ import Typography from '@material-ui/core/Typography'
 import Accordion from '@material-ui/core/Accordion';
 import SimpleAccordion from "./accordion-component";
 import Container from "@material-ui/core/Container"
-import CommentList from "./comment-list";
+
 
 import { useRef, useState } from 'react';
 
-function Card({ username, handle, image, description, profilePic, date, likes, comments = [], shares }) {
+function Card({ username, handle, image, description, profilePic, date, likes, comments = [], shares, picture }) {
     const [numlikes, setNumlikes] = useState(likes);
+    const [numcomments, setNumcomments] = useState(comments.length);
     const textInput = useRef(null);
 
     const liked = () => {
@@ -22,10 +23,23 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
         setNumlikes(prev => prev - 1);
     }
 
-    const[numcomments, setNumcomments] = useState(comments.length);
+    
+
+    const commentButtonClicked = () => {
+        if (textInput && textInput.current) {
+            textInput.current.focus();
+        }
+    }
 
     const commented = () => {
+        comments.push({
+                        commenter: 'Jakie Boy',
+                        picture: 'https://ae01.alicdn.com/kf/HTB1z98DQFXXXXXMaXXXq6xXFXXXf/Realistic-Fiberglass-Male-Mannequin-Head-For-Wig-And-Sunglasses-Display.jpg',
+                        comment: textInput.current.value,
+                        id: 'asdq'
+                    });
         setNumcomments(prev => prev + 1);
+        textInput.current.value = '';
     }
 
     function doit_onkeypress(event){
@@ -35,19 +49,13 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
     }
 
     const commentCommitted = () => {
-        const commentcontent = document.getElementById('commentField').value;
-        if (document.getElementById('commentField').value !== ''){
-            console.log(commentcontent);
-            document.getElementById('commentField').value = '';
+        if (textInput.current.value !== ''){
             commented();
         } 
     }
 
-    const commentButtonClicked = () => {
-        // if (textInput && textInput.current) {
-            textInput.current.focus();
-        // }
-    }
+
+
 
   return(
       <div className="card-container"> 
@@ -91,12 +99,13 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
             />
             <div>
                 <h4 className='comments-title'>Comments</h4>
-                <ol>
+                <ol className='comment-list'>
                     {comments.map(comment => {
                         return (
-                            <li>
-                                <h4>{comment.commenter}</h4>
-                                <p>{comment.comment}</p>
+                            <li className='comment-content' key={comment.id}>
+                                <img className='commenters-picture' src = {comment.picture} width='40px' height='40px'/>
+                                <h4 className='commenters-name'>{comment.commenter}</h4>
+                                <p className='commenters-comment'>{comment.comment}</p>
                             </li>
                         )
                     })}

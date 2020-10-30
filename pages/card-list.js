@@ -5,11 +5,15 @@ import Container from '@material-ui/core/Container'
 const comments = [
     {
         commenter: 'Sean',
-        comment: 'This is a comment'
+        picture: 'https://m.media-amazon.com/images/S/aplus-media/sota/4e8992e2-06d0-45dd-8821-515ddd133d10.jpg',
+        comment: 'This is a comment',
+        id: 'asdasd1'
     },
     {
         commenter: 'Shorn',
-        comment: 'this is another comment'
+        picture: 'https://tse4.mm.bing.net/th?id=OIP.TOWg8XLcw4KzQjqYkvi_DwHaIZ&pid=Api',
+        comment: 'this is another comment',
+        id: 'asdasd12'
     }
 ];
 

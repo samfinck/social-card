@@ -1,0 +1,19 @@
+const el = document.getElementById('commentField')
+
+    const addEvent = el.addEventListener ? function(target,type,action){
+        if (target){
+            target.addEventListener(type, action, false);
+        }
+    } : function(target, type, action){
+        if(target){
+            target.attachEvent('on' + type, action, false);
+        }
+    }
+
+    addEvent(document, 'keydown', function(e) {
+        e = e || window.event;
+        const key = e.key || e.keyCode;
+        if(key===84){
+            commentCommitted();
+        }
+    });
