@@ -5,22 +5,17 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { shadows } from '@material-ui/system'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    color: 'blue',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
+      root: {
+        boxShadow: 'none',
+      },
 }));
 
-export default function SimpleAccordion() {
+export default function AccordionStyled() {
   const classes = useStyles();
-
-  return (
-    <div >
+  return(
       <Accordion className={classes.root}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -28,17 +23,26 @@ export default function SimpleAccordion() {
           id="panel1a-header"
         >
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum
-          </Typography>
-        </AccordionDetails>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum
-          </Typography>
-        </AccordionDetails>
+          <AccordionDetails>
+            <Typography>
+              Report
+            </Typography>
+          </AccordionDetails>
+          <AccordionDetails>
+            <Typography>
+              Hide
+            </Typography>
+          </AccordionDetails>
+          <AccordionDetails>
+            <Typography>
+              Block
+            </Typography>
+          </AccordionDetails>
+          <AccordionDetails>
+            <Typography>
+              More
+            </Typography>
+          </AccordionDetails>
       </Accordion>
-    </div>
-  );
+  )
 }

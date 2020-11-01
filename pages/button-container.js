@@ -13,26 +13,16 @@ import { useState } from 'react'
 
 const useStyles = makeStyles({
     root: {
-        background:'rgb(93, 208, 243)',
-        border: 0,
+        backgroundColor:'white',
+        border: '2px solid black',
         borderRadius: 15,
-        color: 'white',
+        color: 'black',
         padding: '3px',
         marginLeft: '10px',
         marginRight: '10px',
         marginBottom: '10px',
-    }
+    },
 })
-
-const theme = createMuiTheme({
-    palette:{
-        primary:{
-            main: blue[500],
-        }
-    }
-})
-
-
 
 function ButtonStyled({response, onClick}) {
     const classes = useStyles();

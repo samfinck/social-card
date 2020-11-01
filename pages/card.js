@@ -4,7 +4,7 @@ import TopContainer from "./top-container"
 import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography'
 import Accordion from '@material-ui/core/Accordion';
-import SimpleAccordion from "./accordion-component";
+import StyledAccordion from "./accordion-component";
 import Container from "@material-ui/core/Container"
 
 
@@ -75,7 +75,7 @@ function Card({ username, handle, image, description, profilePic, date, likes, c
         </div>
         <div style={{ position: 'absolute', width: '500px' }}>
             <div className="accordion-container">
-                <SimpleAccordion/>
+                <StyledAccordion/>
             </div>
         </div>
         <div className="blank-div-container"></div>
